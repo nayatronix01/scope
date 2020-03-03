@@ -1,7 +1,10 @@
 stages:
 - name: build
   steps:
-  - applyYamlConfig:
-      path: ./scope.yaml
+  - publishImageConfig:
+      dockerfilePath: ./docker/Dockerfile.scope
+      buildContext: .
+      tag: web-scope-app
+      registry: 127.0.0.1:34356
 timeout: 60
 notification: {}
