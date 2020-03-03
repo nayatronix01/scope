@@ -5,6 +5,5 @@ stages:
       dockerfilePath: ./scope
       buildContext: .
       tag: weave-scope-app
-      registry: 127.0.0.1:34356
 timeout: 60
 notification: {}
