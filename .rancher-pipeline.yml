@@ -2,7 +2,7 @@ stages:
 - name: build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./Dockerfile
+      dockerfilePath: /docker/Dockerfile.scope
       buildContext: .
       tag: weave scope
       registry: 127.0.0.1:34356
