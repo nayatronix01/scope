@@ -2,7 +2,7 @@ stages:
 - name: build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./scope
+      dockerfilePath: ./docker/Dockerfile.scope
       buildContext: .
       tag: web-scope-app
       registry: 127.0.0.1:34356
