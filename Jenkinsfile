@@ -1,10 +1,10 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent { docker { image 'go:1.4' } }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                sh 'jenkins -ex scope.sh launch'
             }
         }
     }
