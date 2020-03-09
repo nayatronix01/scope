@@ -1,10 +1,12 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'go:1.4' } }
     stages {
         stage('build') {
             steps {
-                sh 'jenkins -ex scope.sh launch'
+                script 'scope launch'
+                 def root = tool name: '1.4', type: 'go'
+                withEnv(["GOPATH=${env.WORKSPACE}/go", "GOROOT=${root}", "GOBIN=${root}/bin", "PATH+GO=${root}/bin"]) {
+                        sh "mkdir -p ${env.WORKSPACE}/go/src"
             }
         }
     }
